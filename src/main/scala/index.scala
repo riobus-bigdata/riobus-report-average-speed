@@ -7,12 +7,12 @@ import java.text.SimpleDateFormat
 
 object FirstApp {
 	
-	val conf = new SparkConf().setAppName("FristApp")
+	val conf = new SparkConf().setAppName("AverageSpeed")
     val sc = new SparkContext(conf)
 
     val path = "/Users/cassiohg/Coding/Scala/riobus-report-average-speed/" // path to project.
 	val filenameAndPath = "hdfs://localhost:8020/riobusData/estudo_cassio_part_00000000000[0-2]*" // path to file being read.
-	val resultFilenameAndPath = path + "speedLimit-result.txt" // path to file that will be written.
+	val resultFilenameAndPath = path + "average-result.txt" // path to file that will be written.
 
 	val dateFormatGoogle = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss 'UTC'") // format used by the data we have.
 	val dateFormathttp = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss") // format we use inside http message.

@@ -1,4 +1,4 @@
-name := "firstApp"
+name := "AverageSpeed"
 
 version := "1.0"
 
