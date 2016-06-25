@@ -69,7 +69,7 @@ object AverageSpeed {
 		// we will need to write in a file the argument we have received (as a confirmation) and the result.
 		val pw = new PrintWriter(new File(resultFilenameAndPath), "UTF-8") // creating file to be written on.
 		// writing the arguments we have received. just to give a feedback.
-		pw.write(args(0)+","+args(1)+","+args(2)+","+args(3)+","+args(4)+","+args(5)+","+args(6)+ "\n")
+		pw.write(args(1)+","+args(2)+","+args(3)+","+args(4)+","+args(5)+","+args(6)+ "\n")
 		// writing the result.
 		pw.write(speeds._1/speeds._2 + "\n")
 		pw.close // closing file.
