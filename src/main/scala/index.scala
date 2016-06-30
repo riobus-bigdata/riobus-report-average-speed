@@ -1,6 +1,4 @@
 import org.apache.spark.{SparkContext, SparkConf}
-import org.apache.spark.rdd.RDD
-
 import java.io._
 import java.util.Date
 import java.text.SimpleDateFormat
@@ -10,13 +8,13 @@ object AverageSpeed {
 	val conf = new SparkConf().setAppName("AverageSpeed")
     val sc = new SparkContext(conf)
 
+    // path to files being read.
+	val filenameAndPath = "hdfs://localhost:8020/riobusData/estudo_cassio_part_00000000000[0-19]*"
+
 	val dateFormatGoogle = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss 'UTC'") // format used by the data we have.
 	val dateFormathttp = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss") // format we use inside http message.
 
 	def main(args: Array[String]) {
-		// path to files being read.
-		val filenameAndPath = "hdfs://localhost:8020/riobusData/estudo_cassio_part_00000000000[0-19]*"		
-
 		val resultFilenameAndPath = args(0) // path to file where spark driver should write results to.
 
 		val dateBegin = dateFormathttp.parse(args(1)) // value date that will hold the date interval's beginning.
